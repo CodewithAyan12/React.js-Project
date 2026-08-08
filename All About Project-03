@@ -1,0 +1,11 @@
+-->> so in this we talk about file name App.jsx 
+in this file we import every usefull sub section we create of project we can do all that work directly on this 
+but we do them separetely so that it don't create mess 
+imports files -->>import NavBar from './components/NavBar'
+import CardSection from './components/CardSection'
+==========code-explaination=============
+so in my project the problem i faced was i want that my background of ui has a blur image and the navbar
+which i want it stick and moved with the up- down bar not only show when we was in uper section of page 
+so for this we use two concept -->> 1. Relative , 2. Absolute
+these two wrok like -->> we use relative to make the object stay in same place but absolute use to make that body move 
+
