@@ -1,0 +1,28 @@
+Points to create folder 
+first we open terminal in VS code than enter 
+command- npm create vite 
+than it ask for //folder-name-" as your choice  "
+than ask for in which language we are doing in React so we choose react.js 
+than we choose javaScript 
+than we have to choose ESlint 
+After that it install and create the folder as u named it. 
+we get several flies in folder some of which we are going to work on it are 
+================flies================
+1.App.css- It is used for direct css for App.jsx 
+2.index.css- it is the global css 
+main.jsx -  it has root we create in index.html 
+index.html - it is the staring point of every project because from there all the data store or push in root file from react 
+==========components=========
+we use the components to make the work less complicated  and we create sub section we need to create website and store in it 
+like example- card.jsx so we use this file in component and import in App.jsx and use in App.jsx 
+App.jsx - it is like the parent of website architecture 
+React.js boilerplate - Rafce(shortcut) of - 
+import React from 'react'
+const 'name of file'= () => {
+  return (
+    <div>
+
+    </div>
+  )
+}
+export default 'name of file'
