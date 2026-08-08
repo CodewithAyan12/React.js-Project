@@ -1,2 +1,118 @@
 ===============Main work================
-So in this 
+-->> So in this Project I use TailwindCSS - so first we have to write it in index.css we import it using 
+-->> @import "tailwindcss";
+-->> *we can also use css globaly like in index.css i used it for cards.
+======Flies i create in components========
+1.card.jsx- in card.t jsx we have the UI of one single card so first we create how one card gona look 
+ code - import React from "react";
+
+const Card = (props) => {
+
+    const {title, heading, count} = props ;
+
+    // ==================== UI ===========================
+    return(
+        <section className="card-section">
+            <p>{title}</p>
+            <h2 className="text-3xl">{heading}</h2>
+            <p>{count} openings</p>
+        </section>
+    );
+}
+
+
+export default Card ;
+
+=============point-2======================
+2.cardSection.jsx- after creating one single card we have to create multiple card so we create this section for it in this section 
+ i iterate all the Array that using map like -import React from 'react'
+import Card from './Card'
+
+import {CardDetails} from '../../resources/CardData'
+
+const CardSection = () => {
+
+    return (
+        <div className="w-[80%] flex flex-wrap gap-4">
+            {CardDetails && CardDetails.map(eachElement => {
+                return <Card key={eachElement.id} title={eachElement.title} heading={eachElement.heading} count={eachElement.count}  />
+            })}
+        </div>
+    )
+}
+
+export default CardSection
+ =============code-Explanation=============
+1.we create a const name cardsection and first we import {card details} from ./resources/CardData
+2.  <div className="w-[80%] flex flex-wrap gap-4"> = this is a div in this div we use class which used to give TailwindCSS 
+3.than we write {CardDetails && CardDetails.map(eachElement =>   = this to iterate in Array using map and return <card/>
+4. return<card key={eachElement.id} this we write to get id of every data from Array .
+5. after that we give all the sections we use in card -title={eachElement.title} heading={eachElement.heading} count={eachElement.count} using eachElement.like props drilling concept.
+6. after this we close the div and export default cardSection
+================point-3=====================
+3.NavBar.jsx- we use this for nav bar code 
+code->  
+ import React, { useState } from "react";
+
+import "./CSS/commoncss.css";
+import {Menu} from "lucide-react";
+
+const NavBar = () => {
+    // ========================= Custom Logics ================================
+    
+    const [navSection, setNavSection] = useState(true) ;
+
+    // method to hide or show the navSection on button click
+    const handleShowNav = () => {
+        setNavSection(!navSection);
+    }
+
+    // ========================= UI ================================
+    return(
+        <nav className="p-3">
+            <div className="h-15 rounded-xl px-5 flex items-center justify-between navColor">
+                {/* logo section */}
+                <section className=" text-4xl text-white bitcount-prop-single-Nothing">logo</section>
+
+                {/* navigation section */}
+                <section  className={navSection ? "w-md flex items-center justify-between text-white" : "hidden"}>
+                    <a href="#" className="hover:text-black">Home</a>
+                    <a href="#" className="hover:text-black">Jobs</a>
+                    <a href="#categories" className="hover:text-black">Category</a>
+                    <a href="#" className="hover:text-black">Live Opening</a>
+                </section>
+
+                {/* register section */}
+                {/* <button  className="bg-white text-black font-medium px-5 py-1 rounded-2xl cursor-pointer border border-white hover:bg-transparent hover:border-white hover:text-white" onClick={handleShowNav}>Register Now</button> */}
+                {/* register section */}
+                <button  className="bg-white text-black font-medium px-5 py-1 rounded-2xl cursor-pointer border border-white hover:bg-transparent hover:border-white hover:text-white">Register Now</button>
+
+                {/* Hamburger Section */}
+                {/* <div className="">
+                    <Menu className="text-black" />
+                </div> */}
+            </div>
+        </nav>
+    );
+}
+
+export default NavBar ;
+
+==============code-Explanation==================
+1. we use useState for variable use and also give a method to it -->> import React, { useState } from "react";
+2. how we can use useState -->>  // ========================= Custom Logics ================================
+    
+    const [navSection, setNavSection] = useState(true) ;
+
+    // method to hide or show the navSection on button click
+    const handleShowNav = () => {
+        setNavSection(!navSection);
+    }
+3. we use anchor to direct the font to link inside div like -->> <a href="#"</a>
+4. we use hover: tag for when the mouse touch it , it changes its color by creating class  . -->><a href="#" className="hover:text-black">Jobs</a>
+
+===============================================================================================
+-->> so why we use these many types of flies because it is easy to manage them seprately instead of in one single file
+
+
+
