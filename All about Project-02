@@ -1,6 +1,6 @@
 ===============Main work================
 -->> So in this Project I use TailwindCSS - so first we have to write it in index.css we import it using 
--->> @import "tailwindcss";
+-->> @import "tailwindcss"; also in vite . config file we have the  tailwind () from tailwind website and link we paste in index. css
 -->> *we can also use css globaly like in index.css i used it for cards.
 ======Flies i create in components========
 1.card.jsx- in card.t jsx we have the UI of one single card so first we create how one card gona look 
